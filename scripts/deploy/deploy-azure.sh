@@ -3,6 +3,8 @@
 # Deploy Chat Copilot Azure resources.
 
 set -e
+set -x  # Enable verbose logging
+az --version
 
 usage() {
     echo "Usage: $0 -d DEPLOYMENT_NAME -s SUBSCRIPTION -c BACKEND_CLIENT_ID -fc FRONTEND_CLIENT_ID -t AZURE_AD_TENANT_ID -ai AI_SERVICE_TYPE [OPTIONS]"
@@ -125,6 +127,7 @@ while [[ $# -gt 0 ]]; do
         ;;
     esac
 done
+az account list --query "[?name=='$SUBSCRIPTION'].{name:name}" --output tsv
 
 # Check mandatory arguments
 if [[ -z "$DEPLOYMENT_NAME" ]] || [[ -z "$SUBSCRIPTION" ]] || [[ -z "$BACKEND_CLIENT_ID" ]] || [[ -z "$FRONTEND_CLIENT_ID" ]] || [[ -z "$AZURE_AD_TENANT_ID" ]] || [[ -z "$AI_SERVICE_TYPE" ]]; then
