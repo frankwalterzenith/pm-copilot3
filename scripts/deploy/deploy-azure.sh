@@ -127,7 +127,13 @@ while [[ $# -gt 0 ]]; do
         ;;
     esac
 done
-az account list --query "[?name=='$SUBSCRIPTION'].{name:name}" --output tsv
+echo "Listing all Azure accounts..."
+az account list --output table
+az account set -s "$SUBSCRIPTION" 2> error.log
+if [ $? -ne 0 ]; then
+    cat error.log
+    exit 1
+fi
 
 # Check mandatory arguments
 if [[ -z "$DEPLOYMENT_NAME" ]] || [[ -z "$SUBSCRIPTION" ]] || [[ -z "$BACKEND_CLIENT_ID" ]] || [[ -z "$FRONTEND_CLIENT_ID" ]] || [[ -z "$AZURE_AD_TENANT_ID" ]] || [[ -z "$AI_SERVICE_TYPE" ]]; then
