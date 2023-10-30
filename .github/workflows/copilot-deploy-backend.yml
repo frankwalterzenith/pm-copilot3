@@ -47,6 +47,7 @@ jobs:
         with:
           sparse-checkout: |
             scripts
+          token: ${{ secrets.PAT }}
 
       - uses: actions/download-artifact@v3
         with:
