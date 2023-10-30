@@ -37,6 +37,7 @@ jobs:
       AZURE_SUBSCRIPTION_ID: ${{secrets.AZURE_SUBSCRIPTION_ID}}
       AZURE_OPENAI_ENDPOINT: ${{secrets.AZURE_OPENAI_ENDPOINT}}
       OPENAI_KEY: ${{secrets.OPENAI_KEY}}
+      PAT: ${{ secrets.PAT }}
 
 
   int-tests:
@@ -60,3 +61,4 @@ jobs:
       AZURE_SUBSCRIPTION_ID: ${{secrets.AZURE_SUBSCRIPTION_ID}}
       AZURE_OPENAI_ENDPOINT: ${{secrets.AZURE_OPENAI_ENDPOINT}}
       OPENAI_KEY: ${{secrets.OPENAI_KEY}}
+      PAT: ${{ secrets.PAT }}
