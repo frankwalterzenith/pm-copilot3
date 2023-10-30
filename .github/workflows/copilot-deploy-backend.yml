@@ -19,8 +19,7 @@ on:
         required: true
       AZURE_SUBSCRIPTION_ID:
         required: true
-      PAT:
-        required: true
+
     outputs:
       backend-host:
         description: "Host to which backend is deployed"
@@ -47,9 +46,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          sparse-checkout: |
-            scripts
-          token: ${{ secrets.PAT }}
+          clean: true
 
       - uses: actions/download-artifact@v3
         with:
