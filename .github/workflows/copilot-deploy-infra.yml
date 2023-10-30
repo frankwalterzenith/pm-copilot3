@@ -42,7 +42,7 @@ jobs:
         id: deployment-id
         run: echo "deployment_name=${{ vars.CC_DEPLOYMENT_NAME }}-$(date +'%Y-%m-%dT%H-%M-%S')" >> $GITHUB_OUTPUT
 
-      
+
 - uses: actions/checkout@v4
         with:
           clean: true
@@ -60,4 +60,4 @@ jobs:
         with:
           azcliversion: 2.30.0
           inlineScript: |
-            scripts/deploy/deploy-azure.sh -d deployment24 -s ${{secrets.AZURE_SUBSCRIPTION_ID}} -aikey ${{secrets.OPENAI_KEY}} -c ${{secrets.AZURE_CLIENT_ID}} -t ${{secrets.AZURE_TENANT_ID}} -fc 9437e65c-7110-41f3-9b03-a2a78641ffbb -ai OpenAI
+            scripts/deploy/deploy-azure.sh -d deployment26 -s ${{secrets.AZURE_SUBSCRIPTION_ID}} -aikey ${{secrets.OPENAI_KEY}} -c ${{secrets.AZURE_CLIENT_ID}} -t ${{secrets.AZURE_TENANT_ID}} -fc 9437e65c-7110-41f3-9b03-a2a78641ffbb -ai OpenAI
