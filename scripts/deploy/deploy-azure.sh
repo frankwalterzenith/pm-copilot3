@@ -159,10 +159,10 @@ if [[ "${AI_SERVICE_TYPE,,}" = "azureopenai" ]]; then
 
     # if AI_ENDPOINT and AI_SERVICE_KEY are not set, set NO_NEW_AZURE_OPENAI to false and tell the user, else set NO_NEW_AZURE_OPENAI to true
     if [[ -z "$AI_ENDPOINT" ]] && [[ -z "$AI_SERVICE_KEY" ]]; then
-        NO_NEW_AZURE_OPENAI=false
+        NO_NEW_AZURE_OPENAI=true
         echo "When --ai is 'AzureOpenAI', if neither --ai-endpoint nor --ai-service-key are set, then a new Azure OpenAI resource will be created."
     else
-        NO_NEW_AZURE_OPENAI=false
+        NO_NEW_AZURE_OPENAI=true
         echo "When --ai is 'AzureOpenAI', if both --ai-endpoint and --ai-service-key are set, then an existing Azure OpenAI resource will be used."
     fi
 fi
