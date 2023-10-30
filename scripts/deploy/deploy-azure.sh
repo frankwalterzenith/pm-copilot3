@@ -188,7 +188,7 @@ if [ $? -ne 0 ]; then
 fi
 
 az account set -s "$SUBSCRIPTION"
-
+NO_NEW_AZURE_OPENAI=true
 # Set defaults
 : "${REGION:="southcentralus"}"
 : "${WEB_APP_SVC_SKU:="B1"}"
