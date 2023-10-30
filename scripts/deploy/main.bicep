@@ -98,10 +98,13 @@ resource openAI 'Microsoft.CognitiveServices/accounts@2023-05-01' = if (deployNe
   location: location
   kind: 'OpenAI'
   sku: {
-    name: 'S0'
+    name: 'S'
   }
   properties: {
     customSubDomainName: toLower(uniqueName)
+    networkAcls: {
+      defaultAction: 'Allow'
+    }
   }
 }
 
