@@ -67,7 +67,7 @@
     },
     "completionModel": {
       "type": "string",
-      "defaultValue": "gpt-35-turbo",
+      "defaultValue": "gpt-3.5-turbo",
       "metadata": {
         "description": "Model to use for chat completions"
       }
@@ -81,7 +81,7 @@
     },
     "plannerModel": {
       "type": "string",
-      "defaultValue": "gpt-35-turbo",
+      "defaultValue": "gpt-4",
       "metadata": {
         "description": "Completion model the task planner should use"
       }

@@ -32,13 +32,13 @@ param webSearcherPackageUri string = 'https://aka.ms/copilotchat/websearcher/lat
 param aiService string = 'AzureOpenAI'
 
 @description('Model to use for chat completions')
-param completionModel string = 'gpt-35-turbo'
+param completionModel string = 'gpt-3.5-turbo'
 
 @description('Model to use for text embeddings')
 param embeddingModel string = 'text-embedding-ada-002'
 
 @description('Completion model the task planner should use')
-param plannerModel string = 'gpt-35-turbo'
+param plannerModel string = 'gpt-4'
 
 @description('Azure OpenAI endpoint to use (Azure OpenAI only)')
 param aiEndpoint string = ''
